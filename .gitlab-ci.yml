@@ -1,0 +1,15 @@
+variables:
+    GIT_SUBMODULE_STRATEGY: recursive
+
+default:
+    image: matrim/cmake-examples:3.10.2
+
+build-job:
+    stage: build
+    script:
+        - echo "gitlab CI build start"
+        - mkdir build
+        - cd build
+        - cmake ../
+        - make
+        - echo "build complete"
